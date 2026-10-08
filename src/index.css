@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Abril+Fatface:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 45% 98%;
+    --foreground: 151 53% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 151 53% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 151 53% 9%;
+    --primary: 151 53% 13%;
+    --primary-foreground: 40 45% 98%;
+    --secondary: 100 24% 93%;
+    --secondary-foreground: 151 45% 15%;
+    --muted: 40 24% 94%;
+    --muted-foreground: 151 12% 37%;
+    --accent: 46 64% 52%;
+    --accent-foreground: 151 60% 10%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 18% 88%;
+    --input: 40 16% 84%;
+    --ring: 46 64% 52%;
+    --chart-1: 151 53% 20%;
+    --chart-2: 46 64% 52%;
+    --chart-3: 100 30% 40%;
+    --chart-4: 36 45% 66%;
+    --chart-5: 160 35% 45%;
+    --radius: 1.25rem;
+    --font-heading: 'Vazirmatn', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Vazirmatn', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Vazirmatn', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 40 45% 98%;
+    --sidebar-foreground: 151 30% 20%;
+    --sidebar-primary: 151 53% 13%;
+    --sidebar-primary-foreground: 40 45% 98%;
+    --sidebar-accent: 100 24% 93%;
+    --sidebar-accent-foreground: 151 45% 15%;
+    --sidebar-border: 40 18% 88%;
+    --sidebar-ring: 46 64% 52%;
+  }
+
+  .dark {
+    --background: 151 35% 7%;
+    --foreground: 40 40% 96%;
+    --card: 151 35% 10%;
+    --card-foreground: 40 40% 96%;
+    --popover: 151 35% 10%;
+    --popover-foreground: 40 40% 96%;
+    --primary: 40 45% 96%;
+    --primary-foreground: 151 53% 10%;
+    --secondary: 151 25% 16%;
+    --secondary-foreground: 40 40% 96%;
+    --muted: 151 22% 16%;
+    --muted-foreground: 40 15% 70%;
+    --accent: 46 64% 56%;
+    --accent-foreground: 151 60% 10%;
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 151 18% 20%;
+    --input: 151 18% 22%;
+    --ring: 46 64% 56%;
+    --sidebar-background: 151 35% 9%;
+    --sidebar-foreground: 40 30% 94%;
+    --sidebar-primary: 151 53% 45%;
+    --sidebar-primary-foreground: 151 53% 8%;
+    --sidebar-accent: 151 22% 16%;
+    --sidebar-accent-foreground: 40 30% 94%;
+    --sidebar-border: 151 18% 20%;
+    --sidebar-ring: 46 64% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.9;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+    line-height: 1.55;
+    text-wrap: balance;
+  }
+
+  *:focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.35);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+  }
+
+  .glass-dark {
+    background: rgba(11, 36, 24, 0.55);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+  }
+
+  .text-gold {
+    background-image: linear-gradient(100deg, #e5c76b, #d4af37 45%, #f3e0a3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .shadow-liquid {
+    box-shadow: 0 30px 60px -30px rgba(11, 36, 24, 0.45), 0 12px 24px -16px rgba(11, 36, 24, 0.22);
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
